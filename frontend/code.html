@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CivicGuide | Election Process Education</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "on-background": "#0b1c30",
+                "surface-container": "#e5eeff",
+                "surface": "#f8f9ff",
+                "tertiary-container": "#667873",
+                "on-tertiary-container": "#f4fffa",
+                "on-primary-fixed-variant": "#00513a",
+                "surface-container-low": "#eff4ff",
+                "primary-container": "#008560",
+                "surface-variant": "#d3e4fe",
+                "on-secondary": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "secondary-fixed-dim": "#84d6b9",
+                "surface-dim": "#cbdbf5",
+                "outline": "#6d7a73",
+                "on-error-container": "#93000a",
+                "on-primary": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "inverse-on-surface": "#eaf1ff",
+                "on-primary-fixed": "#002115",
+                "secondary-fixed": "#a0f3d4",
+                "background": "#f8f9ff",
+                "primary-fixed-dim": "#68dbae",
+                "secondary-container": "#a0f3d4",
+                "secondary": "#086b53",
+                "surface-container-high": "#dce9ff",
+                "error": "#ba1a1a",
+                "on-tertiary-fixed-variant": "#394a45",
+                "on-tertiary-fixed": "#0d1f1b",
+                "on-primary-container": "#f5fff7",
+                "on-secondary-container": "#167159",
+                "inverse-primary": "#68dbae",
+                "surface-container-highest": "#d3e4fe",
+                "surface-bright": "#f8f9ff",
+                "on-secondary-fixed-variant": "#00513e",
+                "primary-fixed": "#86f8c9",
+                "tertiary-fixed-dim": "#b7cbc4",
+                "on-surface-variant": "#3d4943",
+                "inverse-surface": "#213145",
+                "on-error": "#ffffff",
+                "tertiary-fixed": "#d3e7e0",
+                "surface-tint": "#006c4e",
+                "tertiary": "#4e605b",
+                "primary": "#00694c",
+                "error-container": "#ffdad6",
+                "outline-variant": "#bccac1",
+                "on-surface": "#0b1c30",
+                "on-secondary-fixed": "#002117"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "xs": "4px",
+                "sm": "8px",
+                "lg": "24px",
+                "gutter": "24px",
+                "md": "16px",
+                "xl": "48px",
+                "container-max": "1200px"
+              },
+              "fontFamily": {
+                "body-lg": ["Inter"],
+                "body-md": ["Inter"],
+                "body-sm": ["Inter"],
+                "h1": ["DM Sans"],
+                "button": ["Inter"],
+                "h3": ["DM Sans"],
+                "label-caps": ["Inter"],
+                "h2": ["DM Sans"]
+              },
+              "fontSize": {
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "button": ["16px", {"lineHeight": "1", "fontWeight": "600"}],
+                "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; }
+        h1, h2, h3 { font-family: 'DM Sans', sans-serif; }
+        .bg-teal-primary { background-color: #1D9E75; }
+        .text-teal-primary { color: #1D9E75; }
+        .border-teal-primary { border-color: #1D9E75; }
+        .bg-teal-light { background-color: #E1F5EE; }
+        .educational-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; transition: all 0.2s ease; }
+        .active-card { border: 2px solid #1D9E75; }
+        .chat-bubble-bot { border: 1px solid #E2E8F0; background: #FFFFFF; border-radius: 12px 12px 12px 0px; }
+        .chat-bubble-user { background: #E1F5EE; border-radius: 12px 12px 0px 12px; color: #002117; }
+        .timeline-line { position: absolute; left: 19px; top: 0; bottom: 0; width: 2px; background: #E1F5EE; z-index: 0; }
+        .timeline-node { position: relative; z-index: 10; width: 40px; height: 40px; border-radius: 50%; background: #FFFFFF; border: 2px solid #E1F5EE; display: flex; items-center: center; justify-content: center; }
+        .timeline-node.active { border-color: #1D9E75; background: #1D9E75; color: white; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="text-on-background pb-16">
+<!-- TopAppBar Fragment for Identity -->
+<header class="bg-white border-b border-[#E2E8F0] sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-4 h-16 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#1D9E75] text-2xl">how_to_vote</span>
+<span class="font-['DM_SANS'] font-black text-xl text-[#1D9E75] tracking-tight">CivicGuide</span>
+</div>
+<div class="cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined text-slate-600">account_circle</span>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 md:px-gutter">
+<!-- Hero Section -->
+<section class="py-xl md:py-24 text-center md:text-left flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1">
+<h1 class="font-h1 text-h1 text-on-background mb-md">Understand Your Vote</h1>
+<p class="font-body-lg text-body-lg text-outline mb-lg max-w-2xl">
+                    Empowering citizens with transparent, accessible, and comprehensive information about the democratic process. Learn how every vote shapes our collective future.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-[#1D9E75] text-white px-lg py-md rounded-lg font-button hover:bg-[#0F6E56] transition-colors">Start Learning</button>
+<button class="border border-[#1D9E75] text-[#1D9E75] px-lg py-md rounded-lg font-button hover:bg-teal-light transition-colors">View Timeline</button>
+</div>
+</div>
+<div class="flex-1 w-full max-w-lg">
+<div class="aspect-video bg-surface-container rounded-xl overflow-hidden relative">
+<img alt="Democratic Process" class="w-full h-full object-cover" data-alt="A clean, professional photograph of a pristine voting booth in a brightly lit, modern hall with soft daylight. The environment is minimalist and neutral, featuring a palette of white and soft greys with subtle teal accents. The atmosphere is quiet, respectful, and institutionally transparent, highlighting the solemnity and clarity of the democratic process. High-key lighting ensures every detail is crisp and accessible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwg_gaye0zWdDUkHO2DuNWImI66FW3TVU4tW7k1ObqN4M4Bvk4NdyHCwzhEk7N2lSS-3Fwo4mdFwHsK0I2LDgSwCS4ESvFt-WW47eP5_t4r0gorKviP_Hz_K6T_wUcwsWyDq8sZNwShqs3mP9rLbOL2yCXmYJJT-3rrTJ4DvDm2_XMdDd3pRpYbG_XVLoNJUeoryWW3ffiiX0ITwsos-YyWdSWZTPh9r9W5TsEnF2HjcdfQLp6saDr2NiRf3gUe9lmezVRO5Plx8zI"/>
+</div>
+</div>
+</section>
+<!-- Topics Grid -->
+<section class="py-xl">
+<div class="mb-xl text-center">
+<h2 class="font-h2 text-h2 mb-sm">Key Election Topics</h2>
+<p class="font-body-md text-outline">Explore the fundamental pillars of our electoral system</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Card 1 -->
+<div class="educational-card group hover:border-[#1D9E75]">
+<span class="material-symbols-outlined text-teal-primary text-3xl mb-md">person_check</span>
+<h3 class="font-h3 text-h3 mb-sm">Voter Registration</h3>
+<p class="font-body-sm text-outline mb-md">Step-by-step guide on how to register and verify your details in the electoral roll.</p>
+<button class="text-teal-primary font-button flex items-center gap-2 group-hover:underline">
+                        Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Card 2 -->
+<div class="educational-card group hover:border-[#1D9E75]">
+<span class="material-symbols-outlined text-teal-primary text-3xl mb-md">stadium</span>
+<h3 class="font-h3 text-h3 mb-sm">Polling Stations</h3>
+<p class="font-body-sm text-outline mb-md">Locate your nearest station and understand the layout and procedures on election day.</p>
+<button class="text-teal-primary font-button flex items-center gap-2 group-hover:underline">
+                        Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Card 3 -->
+<div class="educational-card group hover:border-[#1D9E75]">
+<span class="material-symbols-outlined text-teal-primary text-3xl mb-md">fingerprint</span>
+<h3 class="font-h3 text-h3 mb-sm">EVM &amp; VVPAT</h3>
+<p class="font-body-sm text-outline mb-md">Comprehensive overview of Electronic Voting Machines and Voter Verifiable Paper Audit Trail.</p>
+<button class="text-teal-primary font-button flex items-center gap-2 group-hover:underline">
+                        Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Card 4 -->
+<div class="educational-card group hover:border-[#1D9E75]">
+<span class="material-symbols-outlined text-teal-primary text-3xl mb-md">gavel</span>
+<h3 class="font-h3 text-h3 mb-sm">Code of Conduct</h3>
+<p class="font-body-sm text-outline mb-md">Rules and guidelines for political parties and candidates to ensure fair competition.</p>
+<button class="text-teal-primary font-button flex items-center gap-2 group-hover:underline">
+                        Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Card 5 -->
+<div class="educational-card group hover:border-[#1D9E75]">
+<span class="material-symbols-outlined text-teal-primary text-3xl mb-md">analytics</span>
+<h3 class="font-h3 text-h3 mb-sm">Counting Process</h3>
+<p class="font-body-sm text-outline mb-md">Transparent explanation of how votes are tabulated and results are announced.</p>
+<button class="text-teal-primary font-button flex items-center gap-2 group-hover:underline">
+                        Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Card 6 -->
+<div class="educational-card group hover:border-[#1D9E75]">
+<span class="material-symbols-outlined text-teal-primary text-3xl mb-md">security</span>
+<h3 class="font-h3 text-h3 mb-sm">Complaint Redressal</h3>
+<p class="font-body-sm text-outline mb-md">Official channels to report discrepancies or violations during the election cycle.</p>
+<button class="text-teal-primary font-button flex items-center gap-2 group-hover:underline">
+                        Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="educational-card group hover:border-[#1D9E75] bg-teal-light border-teal-primary">
+<span class="material-symbols-outlined text-teal-primary text-3xl mb-md">quiz</span>
+<h3 class="font-h3 text-h3 mb-sm">Civic Literacy Quiz</h3>
+<p class="font-body-sm text-outline mb-md">Test your knowledge of the democratic process and earn your civic badge.</p>
+<button class="bg-teal-primary text-white px-md py-2 rounded-lg font-button flex items-center gap-2 hover:bg-[#0F6E56] transition-all">
+                        Start Quiz <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div></div>
+</section>
+<!-- ChatAssistant Section -->
+<section class="py-xl">
+<div class="max-w-4xl mx-auto educational-card overflow-hidden !p-0 shadow-sm">
+<!-- Chat Header -->
+<div class="bg-white border-b border-[#E2E8F0] p-md flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-2 border-[#1D9E75] flex items-center justify-center text-2xl">🗳️</div>
+<div>
+<h3 class="font-button text-on-background">Civic Assistant</h3>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-teal-primary"></span>
+<span class="text-[10px] text-outline font-label-caps uppercase">Online</span>
+</div>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-teal-primary">refresh</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-teal-primary">more_vert</span>
+</div>
+</div>
+<!-- Chat Body -->
+<div class="h-[500px] flex flex-col bg-surface-container-lowest">
+<!-- Shortcuts -->
+<div class="p-md flex gap-2 overflow-x-auto border-b border-[#E2E8F0]">
+<button class="flex items-center gap-2 px-md py-xs bg-white border border-[#E2E8F0] rounded-full whitespace-nowrap text-sm hover:border-[#1D9E75] hover:bg-teal-light transition-all">
+<span class="material-symbols-outlined text-sm">fact_check</span> Voter Info
+                        </button>
+<button class="flex items-center gap-2 px-md py-xs bg-white border border-[#E2E8F0] rounded-full whitespace-nowrap text-sm hover:border-[#1D9E75] hover:bg-teal-light transition-all">
+<span class="material-symbols-outlined text-sm">map</span> Find Booth
+                        </button>
+<button class="flex items-center gap-2 px-md py-xs bg-white border border-[#E2E8F0] rounded-full whitespace-nowrap text-sm hover:border-[#1D9E75] hover:bg-teal-light transition-all">
+<span class="material-symbols-outlined text-sm">assignment</span> Form 6
+                        </button>
+<button class="flex items-center gap-2 px-md py-xs bg-white border border-[#E2E8F0] rounded-full whitespace-nowrap text-sm hover:border-[#1D9E75] hover:bg-teal-light transition-all">
+<span class="material-symbols-outlined text-sm">policy</span> Rules
+                        </button>
+<button class="flex items-center gap-2 px-md py-xs bg-white border border-[#E2E8F0] rounded-full whitespace-nowrap text-sm hover:border-[#1D9E75] hover:bg-teal-light transition-all">
+<span class="material-symbols-outlined text-sm">history_edu</span> Results
+                        </button>
+</div>
+<!-- Messages -->
+<div class="flex-1 overflow-y-auto p-lg space-y-lg">
+<div class="chat-bubble-bot p-md max-w-[80%] self-start">
+                            Hello! I'm your Civic Assistant. I can help you understand the voting process, find registration info, or clarify election rules. How can I assist you today?
+                        </div>
+<div class="chat-bubble-user p-md max-w-[80%] self-end ml-auto">
+                            Who can vote in the national elections?
+                        </div>
+<div class="chat-bubble-bot p-md max-w-[80%] self-start">
+                            Every Indian citizen who is 18 years of age or older on the qualifying date is eligible to be registered as a voter in the electoral roll. They must be an ordinary resident in the constituency and not disqualified under any law.
+                        </div>
+<!-- Typing indicator -->
+<div class="flex items-center gap-1 p-xs opacity-50">
+<span class="w-1.5 h-1.5 rounded-full bg-outline animate-pulse"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline animate-pulse delay-75"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline animate-pulse delay-150"></span>
+</div>
+</div>
+<!-- Quick Replies -->
+<div class="px-lg pb-md flex flex-wrap gap-2">
+<span class="px-md py-1 border border-teal-primary text-teal-primary rounded-full text-xs cursor-pointer hover:bg-teal-primary hover:text-white transition-colors">Who can vote?</span>
+<span class="px-md py-1 border border-teal-primary text-teal-primary rounded-full text-xs cursor-pointer hover:bg-teal-primary hover:text-white transition-colors">What is EVM?</span>
+<span class="px-md py-1 border border-teal-primary text-teal-primary rounded-full text-xs cursor-pointer hover:bg-teal-primary hover:text-white transition-colors">How is counting done?</span>
+<span class="px-md py-1 border border-teal-primary text-teal-primary rounded-full text-xs cursor-pointer hover:bg-teal-primary hover:text-white transition-colors">What is NOTA?</span>
+</div>
+<!-- Input Area -->
+<div class="p-md border-t border-[#E2E8F0] bg-white">
+<div class="flex items-center gap-2">
+<input class="flex-1 border-none focus:ring-0 text-body-md placeholder:text-outline-variant" placeholder="Type your question here..." type="text"/>
+<button class="w-10 h-10 bg-teal-primary text-white rounded-lg flex items-center justify-center hover:bg-[#0F6E56] transition-colors">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Election Timeline Section -->
+<section class="py-xl">
+<div class="mb-xl text-center">
+<h2 class="font-h2 text-h2 mb-sm">The Election Lifecycle</h2>
+<p class="font-body-md text-outline">Tracking the journey from announcement to results</p>
+</div>
+<div class="max-w-3xl mx-auto relative pl-12 space-y-lg">
+<div class="timeline-line"></div>
+<!-- Step 1 -->
+<div class="relative group cursor-pointer">
+<div class="timeline-node active">
+<span class="font-bold">1</span>
+</div>
+<div class="educational-card ml-8 active-card">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-h3 text-xl text-teal-primary">Official Notification</h3>
+<span class="px-md py-1 bg-teal-light text-teal-primary text-xs font-bold rounded-full">Day 0</span>
+</div>
+<p class="font-body-sm text-outline">The Election Commission issues the formal notification announcing the election schedule and key dates.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative group cursor-pointer">
+<div class="timeline-node">
+<span class="font-bold">2</span>
+</div>
+<div class="educational-card ml-8 group-hover:border-[#E2E8F0]">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-h3 text-xl">Candidate Nomination</h3>
+<span class="px-md py-1 bg-surface-container text-outline text-xs font-bold rounded-full">7-10 Days</span>
+</div>
+<p class="font-body-sm text-outline">Candidates file their nomination papers, including affidavits regarding their criminal record, assets, and liabilities.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative group cursor-pointer">
+<div class="timeline-node">
+<span class="font-bold">3</span>
+</div>
+<div class="educational-card ml-8">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-h3 text-xl">Scrutiny &amp; Withdrawal</h3>
+<span class="px-md py-1 bg-surface-container text-outline text-xs font-bold rounded-full">3 Days</span>
+</div>
+<p class="font-body-sm text-outline">ECI officials verify nomination papers. Candidates have a window to withdraw their names if they choose.</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="relative group cursor-pointer">
+<div class="timeline-node">
+<span class="font-bold">4</span>
+</div>
+<div class="educational-card ml-8">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-h3 text-xl">Campaigning Period</h3>
+<span class="px-md py-1 bg-surface-container text-outline text-xs font-bold rounded-full">14+ Days</span>
+</div>
+<p class="font-body-sm text-outline">Political parties and candidates engage in rallies and outreach under the Model Code of Conduct guidelines.</p>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="relative group cursor-pointer">
+<div class="timeline-node">
+<span class="font-bold">5</span>
+</div>
+<div class="educational-card ml-8">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-h3 text-xl">Pre-Poll Silence</h3>
+<span class="px-md py-1 bg-surface-container text-outline text-xs font-bold rounded-full">48 Hours</span>
+</div>
+<p class="font-body-sm text-outline">All campaigning must cease 48 hours before the conclusion of the poll to allow voters time to reflect.</p>
+</div>
+</div>
+<!-- Step 6 -->
+<div class="relative group cursor-pointer">
+<div class="timeline-node">
+<span class="font-bold">6</span>
+</div>
+<div class="educational-card ml-8">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-h3 text-xl">Polling Day</h3>
+<span class="px-md py-1 bg-surface-container text-outline text-xs font-bold rounded-full">Actual Date</span>
+</div>
+<p class="font-body-sm text-outline">Citizens visit assigned polling stations to cast their votes using EVMs in a secure environment.</p>
+</div>
+</div>
+<!-- Step 7 -->
+<div class="relative group cursor-pointer">
+<div class="timeline-node">
+<span class="font-bold">7</span>
+</div>
+<div class="educational-card ml-8">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-h3 text-xl">Vote Counting</h3>
+<span class="px-md py-1 bg-surface-container text-outline text-xs font-bold rounded-full">Fixed Date</span>
+</div>
+<p class="font-body-sm text-outline">Votes are counted under strict surveillance of ECI officials and candidate representatives.</p>
+</div>
+</div>
+<!-- Step 8 -->
+<div class="relative group cursor-pointer">
+<div class="timeline-node">
+<span class="font-bold">8</span>
+</div>
+<div class="educational-card ml-8">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-h3 text-xl">Declaration of Result</h3>
+<span class="px-md py-1 bg-surface-container text-outline text-xs font-bold rounded-full">Immediate</span>
+</div>
+<p class="font-body-sm text-outline">Successful candidates are announced and the formal notification completes the election process.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Election Quiz Section -->
+</main>
+<!-- Footer Component -->
+<footer class="bg-teal-light border-t border-[#E2E8F0] w-full">
+<div class="w-full py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="flex items-center gap-2 font-bold text-[#1D9E75]">
+<span class="material-symbols-outlined">how_to_vote</span>
+<span>CivicGuide</span>
+</div>
+<p class="font-['DM_SANS'] text-sm text-slate-600">© 2024 Election Process Education. Institutional Transparency Initiative.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-sm text-slate-600 hover:text-[#1D9E75] hover:underline transition-all" href="#">Election Commission</a>
+<a class="text-sm text-slate-600 hover:text-[#1D9E75] hover:underline transition-all" href="#">Privacy Policy</a>
+<a class="text-sm text-slate-600 hover:text-[#1D9E75] hover:underline transition-all" href="#">Terms of Service</a>
+<a class="text-sm text-slate-600 hover:text-[#1D9E75] hover:underline transition-all" href="#">Accessibility</a>
+</div>
+</div>
+</footer><nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-[#E2E8F0] px-4 py-2 flex justify-around items-center z-50 md:hidden">
+<a class="flex flex-col items-center gap-1 text-teal-primary" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-outline hover:text-teal-primary transition-colors" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Topics</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-outline hover:text-teal-primary transition-colors" href="#">
+<span class="material-symbols-outlined">timeline</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Timeline</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-outline hover:text-teal-primary transition-colors" href="#">
+<span class="material-symbols-outlined">extension</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Quiz</span>
+</a>
+</nav>
+</body></html>

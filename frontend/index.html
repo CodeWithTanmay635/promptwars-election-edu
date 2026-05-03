@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CivicGuide | Election Process Education</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "on-background": "#0b1c30",
+                "surface-container": "#e5eeff",
+                "surface": "#f8f9ff",
+                "tertiary-container": "#667873",
+                "on-tertiary-container": "#f4fffa",
+                "on-primary-fixed-variant": "#00513a",
+                "surface-container-low": "#eff4ff",
+                "primary-container": "#008560",
+                "surface-variant": "#d3e4fe",
+                "on-secondary": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "secondary-fixed-dim": "#84d6b9",
+                "surface-dim": "#cbdbf5",
+                "outline": "#6d7a73",
+                "on-error-container": "#93000a",
+                "on-primary": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "inverse-on-surface": "#eaf1ff",
+                "on-primary-fixed": "#002115",
+                "secondary-fixed": "#a0f3d4",
+                "background": "#f8f9ff",
+                "primary-fixed-dim": "#68dbae",
+                "secondary-container": "#a0f3d4",
+                "secondary": "#086b53",
+                "surface-container-high": "#dce9ff",
+                "error": "#ba1a1a",
+                "on-tertiary-fixed-variant": "#394a45",
+                "on-tertiary-fixed": "#0d1f1b",
+                "on-primary-container": "#f5fff7",
+                "on-secondary-container": "#167159",
+                "inverse-primary": "#68dbae",
+                "surface-container-highest": "#d3e4fe",
+                "surface-bright": "#f8f9ff",
+                "on-secondary-fixed-variant": "#00513e",
+                "primary-fixed": "#86f8c9",
+                "tertiary-fixed-dim": "#b7cbc4",
+                "on-surface-variant": "#3d4943",
+                "inverse-surface": "#213145",
+                "on-error": "#ffffff",
+                "tertiary-fixed": "#d3e7e0",
+                "surface-tint": "#006c4e",
+                "tertiary": "#4e605b",
+                "primary": "#00694c",
+                "error-container": "#ffdad6",
+                "outline-variant": "#bccac1",
+                "on-surface": "#0b1c30",
+                "on-secondary-fixed": "#002117"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "xs": "4px",
+                "sm": "8px",
+                "lg": "24px",
+                "gutter": "24px",
+                "md": "16px",
+                "xl": "48px",
+                "container-max": "1200px"
+              },
+              "fontFamily": {
+                "body-lg": ["Inter"],
+                "body-md": ["Inter"],
+                "body-sm": ["Inter"],
+                "h1": ["DM Sans"],
+                "button": ["Inter"],
+                "h3": ["DM Sans"],
+                "label-caps": ["Inter"],
+                "h2": ["DM Sans"]
+              },
+              "fontSize": {
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "button": ["16px", {"lineHeight": "1", "fontWeight": "600"}],
+                "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; }
+        h1, h2, h3 { font-family: 'DM Sans', sans-serif; }
+        .bg-teal-primary { background-color: #1D9E75; }
+        .text-teal-primary { color: #1D9E75; }
+        .border-teal-primary { border-color: #1D9E75; }
+        .bg-teal-light { background-color: #E1F5EE; }
+        .educational-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; transition: all 0.2s ease; }
+        .educational-card:hover { border-color: #1D9E75; }
+        .active-card { border: 2px solid #1D9E75; }
+        .chat-bubble-bot { border: 1px solid #E2E8F0; background: #FFFFFF; border-radius: 12px 12px 12px 0px; }
+        .chat-bubble-user { background: #E1F5EE; border-radius: 12px 12px 0px 12px; color: #002117; }
+        .timeline-line { position: absolute; left: 19px; top: 0; bottom: 0; width: 2px; background: #E1F5EE; z-index: 0; }
+        .timeline-node { position: relative; z-index: 10; width: 40px; height: 40px; border-radius: 50%; background: #FFFFFF; border: 2px solid #E1F5EE; display: flex; align-items: center; justify-content: center; }
+        .timeline-node.active { border-color: #1D9E75; background: #1D9E75; color: white; }
+        body { min-height: max(884px, 100dvh); }
+    </style>
+  </head>
+  <body class="text-on-background pb-16">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
