@@ -25,7 +25,7 @@ const validateChat = (req, res, next) => {
 const validateQuizCheck = (req, res, next) => {
   const schema = Joi.object({
     questionId: Joi.string().required(),
-    answer: Joi.string().required()
+    answer: Joi.number().required()
   });
 
   const { error } = schema.validate(req.body);
