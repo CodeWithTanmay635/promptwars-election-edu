@@ -78,6 +78,14 @@ const ElectionQuiz = () => {
           <div className="text-center py-xl">
             <div className="text-6xl mb-md">🏆</div>
             <h3 className="font-h3 text-h3 text-[#1D9E75] mb-md">Quiz Completed!</h3>
+            <div className="bg-teal-light p-md rounded-lg mb-lg">
+              <p className="text-teal-primary font-bold text-sm uppercase tracking-widest mb-1">Your Civic Level</p>
+              <p className="text-2xl font-h2 text-on-background">
+                {score === questions.length ? '🎓 Constitutional Expert' : 
+                 score > questions.length * 0.7 ? '🏅 Informed Citizen' : 
+                 score > questions.length * 0.4 ? '📜 Aspiring Voter' : '📚 Student of Democracy'}
+              </p>
+            </div>
             <p className="font-body-lg text-outline mb-lg">
               You scored <strong className="text-on-background">{score}</strong> out of <strong className="text-on-background">{questions.length}</strong>
             </p>

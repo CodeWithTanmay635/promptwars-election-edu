@@ -182,6 +182,46 @@ const QUIZ_QUESTIONS = [
     correct: 0,
     explanation: 'As per the Representation of the People Act, public campaigning and public meetings must stop 48 hours prior to the hour fixed for the conclusion of the poll in that constituency.',
     topic: 'mcc'
+  },
+  {
+    id: 'q11',
+    question: 'How long is the term of the Chief Election Commissioner of India?',
+    options: ['6 years or until age 65', '5 years or until age 62', '4 years', 'Until the next general election'],
+    correct: 0,
+    explanation: 'The Chief Election Commissioner and other Election Commissioners hold office for a term of 6 years or until they attain the age of 65 years, whichever is earlier.',
+    topic: 'overview'
+  },
+  {
+    id: 'q12',
+    question: 'What is the "Indelible Ink" applied on a voter\'s finger made of?',
+    options: ['Silver Nitrate', 'Potassium Permanganate', 'Iron Oxide', 'Lead Sulfate'],
+    correct: 0,
+    explanation: 'The indelible ink contains Silver Nitrate, which reacts with the skin to leave a stain that cannot be washed off with soap or chemicals for several days.',
+    topic: 'voting_day'
+  },
+  {
+    id: 'q13',
+    question: 'Which of the following is NOT a requirement to be a voter in India?',
+    options: ['Educational qualification', 'Citizen of India', 'At least 18 years old', 'Ordinary resident of a constituency'],
+    correct: 0,
+    explanation: 'India follows Universal Adult Suffrage. There is no educational or property qualification required to be a voter.',
+    topic: 'registration'
+  },
+  {
+    id: 'q14',
+    question: 'What is a "Voter Slip" issued by the ECI?',
+    options: ['An information guide about the booth and serial number', 'A replacement for a Voter ID card', 'A document to prove citizenship', 'A receipt after casting a vote'],
+    correct: 0,
+    explanation: 'The Voter Information Slip (VIS) is distributed to voters to help them know their polling station, serial number in the roll, and date/time of poll. It is NOT an identity proof by itself.',
+    topic: 'registration'
+  },
+  {
+    id: 'q15',
+    question: 'How many phases were there in the 2024 Indian General Elections?',
+    options: ['7 phases', '5 phases', '9 phases', 'Single phase'],
+    correct: 0,
+    explanation: 'The 2024 Lok Sabha elections were conducted in 7 phases across the country to ensure security and administrative efficiency.',
+    topic: 'overview'
   }
 ];
 

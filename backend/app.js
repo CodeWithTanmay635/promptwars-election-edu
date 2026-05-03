@@ -25,6 +25,15 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
+// Root Route
+app.get('/', (req, res) => {
+  res.json({
+    message: "Election Education API is running",
+    documentation: "/api",
+    health: "/health"
+  });
+});
+
 // Health Endpoint
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'ok', timestamp: Date.now() });
