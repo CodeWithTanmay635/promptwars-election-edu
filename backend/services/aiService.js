@@ -35,7 +35,7 @@ async function sendMessage(message, history = []) {
     messages.push({ role: 'user', content: message });
 
     const response = await client.messages.create({
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-3-5-sonnet-20241022',
       max_tokens: 1000,
       system: SYSTEM_PROMPT,
       messages
@@ -44,7 +44,7 @@ async function sendMessage(message, history = []) {
     return { reply: response.content[0].text };
   } catch (err) {
     console.error('AI Error:', err.message);
-    return { reply: 'VoteBot is unavailable right now. Please try again in a moment.' };
+    return { reply: `VoteBot Error: ${err.message}. (Check Render environment variables and ensure they are saved!)` };
   }
 }
 
