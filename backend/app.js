@@ -13,9 +13,17 @@ app.use(express.json());
 
 // CORS Configuration
 app.use(cors({
-  origin: process.env.FRONTEND_URL || '*',
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:3000',
+    process.env.FRONTEND_URL
+  ].filter(Boolean),
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
+
+app.options('*', cors());
 
 // Rate Limiting
 const limiter = rateLimit({
