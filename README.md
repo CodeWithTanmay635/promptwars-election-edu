@@ -30,13 +30,6 @@ Our platform provides a **one-stop digital learning hub**. By combining **Genera
 
 ---
 
-## 📸 Screenshots
-*(Coming Soon)*
-| Home Dashboard | AI Chat Interface |
-| :---: | :---: |
-| ![Placeholder](https://via.placeholder.com/400x250?text=Home+Screen) | ![Placeholder](https://via.placeholder.com/400x250?text=AI+Assistant) |
-
----
 
 ## 🚀 Setup & Installation
 
